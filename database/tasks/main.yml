@@ -25,8 +25,8 @@
 
 - name: Create Mysql User
   mysql_user:
-    name: primesoft
-    password: '*977E081510238D46710911A3517EDF2633DB2AAC'
+    name: <your Username>
+    password: 'your Password in encrypted format'
     encrypted: yes
     priv: '*.*:ALL,GRANT'
     state: present
