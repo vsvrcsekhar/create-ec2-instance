@@ -25,7 +25,7 @@
 
 - name: Create Mysql User
   mysql_user:
-    name: <your Username>
+    name: <Your Username>
     password: 'your Password in encrypted format'
     encrypted: yes
     priv: '*.*:ALL,GRANT'
