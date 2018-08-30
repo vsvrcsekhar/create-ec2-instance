@@ -1,0 +1,11 @@
+security: <AWS-Security-Group>
+access: <AWS-Access-Key>
+secret: <AWS-secret-Key>
+region: <AMI-Region>
+type: t2.micro
+ami: <AMI-ID>
+pemkey: <Pem-Key>
+subnet: <AWS-Subnet>
+instance: 1
+tagname: web
+

@@ -1,0 +1,28 @@
+---
+- name: install apache 2.4
+  yum:
+    name: httpd
+    state: present
+
+- name: Enable AllowOverride All in httpdconf
+  replace:
+    path: /etc/httpd/conf/httpd.conf
+    regexp: "AllowOverride None"
+    replace: "AllowOverride All"
+
+- name: restart apache service
+  service:
+    name: httpd
+    state: restarted
+    enabled: yes
+
+- name: Install development tool
+  yum:
+    name: "@Development Tools"
+    state: present
+
+- name: Create phpinfo file in launched server
+  copy:
+    content: '<?php phpinfo(); ?>'
+    dest: /var/www/html/index.php
+    mode: 0644

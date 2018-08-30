@@ -1,0 +1,33 @@
+- name: Install Mysql
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - mysql-server
+    - mysql-devel
+    - python-devel
+    - MySQL-python
+
+- name: Install MySQL-python package
+  command: sudo yum install -y MySQL-python
+
+- name: service start mysql
+  service:
+    name: mysqld
+    state: started
+
+- name: Ensure mysql running state with port 3306
+  wait_for:
+    host: 0.0.0.0
+    port: 3306
+    delay: 10
+    state: drained
+
+- name: Create Mysql User
+  mysql_user:
+    name: primesoft
+    password: '*977E081510238D46710911A3517EDF2633DB2AAC'
+    encrypted: yes
+    priv: '*.*:ALL,GRANT'
+    state: present
+
