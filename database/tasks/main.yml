@@ -26,8 +26,8 @@
 - name: Create Mysql User
   mysql_user:
     name: <Your Username>
-    password: 'your Password in encrypted format'
-    encrypted: yes
+    password: 'your Password'
+    encrypted: no
     priv: '*.*:ALL,GRANT'
     state: present
 
