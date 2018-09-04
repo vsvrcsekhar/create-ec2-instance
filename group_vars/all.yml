@@ -6,6 +6,7 @@ type: t2.micro
 ami: <AMI-ID>
 pemkey: <Pem-Key>
 subnet: <AWS-Subnet>
+remoteuser: <remoteusername>
 instance: 1
 tagname: web
 
